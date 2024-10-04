@@ -12,9 +12,9 @@ export class AppComponent implements OnInit{
 
   ngOnInit():void{
     const foo = new Observable((subscriber) => {
-      subscriber.next(42);
-      subscriber.next(100); // "return" another value
-      subscriber.next(200); // "return" yet another
+      subscriber.next(this.count+=1)
+      subscriber.next(this.count+this.count)
+      subscriber.next(this.count+this.count+1)
     });
 
     console.log('before');
