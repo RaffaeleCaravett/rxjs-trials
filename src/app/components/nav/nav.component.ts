@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,23 +8,11 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+constructor(private service:ServiceService){
+
+}
+
   operation(parameter:string){
-    switch(parameter){
-      case('a'):{
-
-      }
-      break;
-      case('b'):{
-
-      }
-      break;
-      case('c'):{
-
-      }
-      break;
-      default:{
-      console.log('default')
-      }
-    }
+    this.service.obs(parameter)
   }
 }
